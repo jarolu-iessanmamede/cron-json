@@ -5,7 +5,7 @@ import functools
 def calcular_frecuencia(texto):
     tiempos = (365*24*3600,30*24*3600,7*24*3600,24*3600,3600,60,1)
     partes = map(lambda x: int(x[:-1]), texto.split(":"))
-    total_seg = functools.reduce(lambda acc,x: acc+x[0]*x[1],zip(tiempos,partes))
+    total_seg = functools.reduce(lambda acc,x: acc+x[0]*x[1],zip(tiempos,partes),0)
     return total_seg
 
 
